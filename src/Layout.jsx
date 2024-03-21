@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
@@ -7,10 +7,30 @@ const Layout = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink
+                to="/"
+                // style={({ isActive }) => {
+                //   return isActive ? { color: "red" } : {};
+                // }}
+                className={({ isActive }) => {
+                  return isActive ? "new-active" : "";
+                }}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink
+                to="/about"
+                // style={({ isActive }) => {
+                //   return isActive ? { color: "red" } : {};
+                // }}
+                className={({ isActive }) => {
+                  return isActive ? "new-active" : "";
+                }}
+              >
+                About
+              </NavLink>
             </li>
           </ul>
         </nav>
